@@ -1,0 +1,48 @@
+<!-- En: res/layout/dialog_registration_success.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="@drawable/dialog_background"> <!-- Opcional: para bordes redondeados -->
+
+    <!-- 1. La Imagen (un check o un sobre de email) -->
+    <ImageView
+        android:id="@+id/iv_success_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_email_sent" /> <!-- Necesitarás crear este ícono -->
+
+    <!-- 2. Título Principal -->
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="¡Gracias por registrarte!"
+        android:textColor="@color/azul_oscuro"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <!-- 3. Mensaje Secundario -->
+    <TextView
+        android:id="@+id/tv_dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Hemos enviado un enlace de confirmación a tu correo electrónico. Por favor, revísalo para activar tu cuenta."
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp" />
+
+    <!-- 4. Botón para Cerrar el Diálogo -->
+    <Button
+        android:id="@+id/btn_dialog_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Entendido"
+        android:backgroundTint="@color/celeste" /> <!-- Usa tu color personalizado -->
+
+</LinearLayout>
