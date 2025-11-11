@@ -120,8 +120,6 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Por favor, corrige los errores marcados", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        // 6. Crear el Map con los datos para la API
         Map<String, String> fields = new HashMap<>();
         fields.put("firstName", etFirstName.getText().toString().trim());
         fields.put("lastName", etLastName.getText().toString().trim());
@@ -192,7 +190,6 @@ public class RegisterActivity extends AppCompatActivity {
             return false;
         }
 
-        // Validación simple de campos no vacíos (puedes añadir todos los que consideres obligatorios)
         if (etFirstName.getText().toString().trim().isEmpty()) {
             etFirstName.setError("El nombre es obligatorio");
             return false;

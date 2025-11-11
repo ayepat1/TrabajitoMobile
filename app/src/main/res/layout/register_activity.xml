@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Navbar fijo arriba -->
     <include
         android:id="@+id/navBar"
         layout="@layout/nav_bar"
@@ -16,7 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Contenido con scroll debajo del navbar -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -142,7 +140,7 @@
                         android:paddingTop="12dp"
                         android:paddingBottom="12dp"
                         android:paddingStart="12dp"
-                        android:paddingEnd="48dp" /> <!-- Dale espacio a la derecha para el ícono -->
+                        android:paddingEnd="48dp" />
 
                     <ImageView
                         android:id="@+id/ivPasswordToggle"
@@ -150,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end|center_vertical"
                         android:layout_marginEnd="12dp"
-                        android:src="@drawable/ic_eye_closed" /> <!-- Ícono que crearemos -->
+                        android:src="@drawable/ic_eye_closed" />
 
                 </FrameLayout>
 
@@ -174,7 +172,7 @@
                         android:paddingTop="12dp"
                         android:paddingBottom="12dp"
                         android:paddingStart="12dp"
-                        android:paddingEnd="48dp" /> <!-- Dale espacio a la derecha para el ícono -->
+                        android:paddingEnd="48dp" />
 
                     <ImageView
                         android:id="@+id/ivPasswordToggle2"
@@ -182,7 +180,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end|center_vertical"
                         android:layout_marginEnd="12dp"
-                        android:src="@drawable/ic_eye_closed" /> <!-- Ícono que crearemos -->
+                        android:src="@drawable/ic_eye_closed" />
 
                 </FrameLayout>
 

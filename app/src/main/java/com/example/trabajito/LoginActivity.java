@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.IOException;
 import com.example.trabajito.R;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,10 +20,8 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailInput, passwordInput;
-    private Button loginButton, btnNavRegister;
-    private TextView textForgotPassword, textCreateAccount;
-    //falta la base de datos
-
+    private Button loginButton;
+    private TextView textForgotPassword, textCreateAccount, tvLoginError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         //textForgotPassword = findViewById(R.id.text_forgotpassword);
         textCreateAccount = findViewById(R.id.text_createaccount);
         //btnNavRegister = findViewById(R.id.btnNavRegister);
+        tvLoginError = findViewById(R.id.tv_login_error);
+
         NavbarManager.setupNavbar(this);
-
-
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,12 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                 String email = emailInput.getText().toString();
                 String password = passwordInput.getText().toString();
 
-                if(email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
-                } else {
-                    loginUser(email, password);
-                }
-
+                loginUser(email, password);
             }
         });
 
@@ -67,6 +60,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser(String email, String password) {
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(LoginActivity.this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        tvLoginError.setVisibility(View.GONE);
+
         ApiService apiService = ApiClient.getClient().create(ApiService.class);
         Call<LoginResponse> call = apiService.login(email, password);
 
@@ -76,19 +76,17 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     User user = response.body().getUser();
                     if (user != null) {
-                        String username = user.getFirstName(); // Ahora 'username' ya no será null
-                        Toast.makeText(LoginActivity.this, "Bienvenido " + username, Toast.LENGTH_SHORT).show();
+                        tvLoginError.setVisibility(View.GONE);
+                        Toast.makeText(LoginActivity.this, "Bienvenido " + user.getFirstName(), Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        intent.putExtra("USERNAME", username);
+                        intent.putExtra("USERNAME", user.getFirstName());
                         startActivity(intent);
                         finish();
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Respuesta exitosa, pero sin datos de usuario.", Toast.LENGTH_SHORT).show();
                     }
 
                 } else {
-                    Toast.makeText(LoginActivity.this, "Credenciales incorrectas. Código: " + response.code(), Toast.LENGTH_SHORT).show();
+                    handleApiError(response);
                 }
             }
 
@@ -99,4 +97,31 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    private void handleApiError(Response<LoginResponse> response) {
+        String errorMessage = "Error desconocido. Inténtalo más tarde."; // Mensaje por defecto
+
+        if (response.errorBody() != null) {
+            try {
+                String errorBodyString = response.errorBody().string();
+                JSONObject errorObject = new JSONObject(errorBodyString);
+                errorMessage = errorObject.getString("message");
+            } catch (IOException | JSONException e) {
+                Log.e("API_LOGIN_ERROR", "Error al parsear el JSON de error", e);
+            }
+        }
+
+        int statusCode = response.code();
+
+        if (statusCode == 403 && errorMessage.contains("Debes confirmar tu correo")) {
+            tvLoginError.setText(errorMessage);
+            tvLoginError.setVisibility(View.VISIBLE);
+        } else if (statusCode == 400 && (errorMessage.contains("Incorrectos") || errorMessage.contains("no encontrado"))) {
+            tvLoginError.setText("Correo Electrónico o Contraseña Incorrectos");
+            tvLoginError.setVisibility(View.VISIBLE);
+        } else {
+            Toast.makeText(LoginActivity.this, "Ocurrió un error. Código: " + statusCode, Toast.LENGTH_SHORT).show();
+            Log.e("API_LOGIN_UNHANDLED", "Código: " + statusCode + ", Mensaje: " + errorMessage);
+        }
+    }
+
 }
