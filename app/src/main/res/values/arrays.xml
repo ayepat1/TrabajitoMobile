@@ -5,4 +5,6 @@
         <item>Cédula</item>
         <item>Pasaporte</item>
     </string-array>
+    <string-array name="opciones_urgencia" />
+    <string-array name="opciones_tipo_servicio" />
 </resources>

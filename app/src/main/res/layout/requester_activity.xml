@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Elige un tipo de servicio"
+        android:textColor="@color/azul_oscuro"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Grid de botones para servicios -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/servicesGrid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:alignmentMode="alignMargins"
+        app:columnCount="2"
+        app:useDefaultMargins="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleText">
+
+        <Button
+            android:id="@+id/serviceButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_snowflake"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Aires acondicionados"
+            android:textColor="@color/azul_oscuro"
+            android:textSize="10sp"
+            android:ellipsize="none"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:gravity="center"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill" />
+
+        <Button
+            android:id="@+id/serviceButton2"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_brick_wall"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Albañileria"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton3"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_wood_beam"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Carpintero"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton4"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_lockpicks"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Cerrajería"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton5"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_nurse_female"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Cuidado adultos"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton6"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_bolt"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Electricidad"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton7"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_blacksmith"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Herrería"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton8"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_gardening_shears"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Jardinería"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton9"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_broom"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Limpieza"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton10"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_boxes"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Logística"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton11"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_truck"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Mudanza"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton12"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_baby_bottle"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Niñera"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton13"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_paint_roller"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Pintura"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton14"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_faucet"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Plomería"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/serviceButton15"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_services"
+            android:drawableTop="@drawable/ic_gear_hammer"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Tornería"
+            android:textSize="10dp"
+            android:textColor="@color/azul_oscuro"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

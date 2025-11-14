@@ -91,6 +91,17 @@
             android:text="Recordar contraseña"
             android:textSize="13sp" />
 
+        <TextView
+            android:id="@+id/tv_login_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:text="Debes confirmar tu correo para poder ingresar."
+            android:visibility="gone" />
+
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
