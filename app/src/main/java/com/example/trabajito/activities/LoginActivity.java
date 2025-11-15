@@ -18,7 +18,7 @@ import com.example.trabajito.ApiService;
 import com.example.trabajito.LoginResponse;
 import com.example.trabajito.NavbarManager;
 import com.example.trabajito.R;
-import com.example.trabajito.User;
+import com.example.trabajito.classes.User;
 
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -1,4 +1,4 @@
-package com.example.trabajito;
+package com.example.trabajito.classes;
 
 import com.google.gson.annotations.SerializedName;
 

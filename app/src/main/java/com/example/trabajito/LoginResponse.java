@@ -1,5 +1,6 @@
 package com.example.trabajito;
 
+import com.example.trabajito.classes.User;
 import com.google.gson.annotations.SerializedName;
 
 
