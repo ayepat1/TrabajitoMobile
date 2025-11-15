@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                         tvLoginError.setVisibility(View.GONE);
                         Toast.makeText(LoginActivity.this, "Bienvenido " + user.getFirstName(), Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, SelectServiceActivity.class);
                         intent.putExtra("TOKEN", token);
                         startActivity(intent);
                         finish();
