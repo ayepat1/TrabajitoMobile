@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.trabajito.R;
+import com.example.trabajito.activities.RegisterActivity;
 
 
 public class Navbar extends AppCompatActivity {

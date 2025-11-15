@@ -1,4 +1,4 @@
-package com.example.trabajito;
+package com.example.trabajito.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
+
+import com.example.trabajito.ApiClient;
+import com.example.trabajito.ApiService;
+import com.example.trabajito.LoginResponse;
+import com.example.trabajito.NavbarManager;
 import com.example.trabajito.R;
+import com.example.trabajito.User;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -74,13 +81,19 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
+                    String token = response.body().getToken();
+                    getSharedPreferences("auth", MODE_PRIVATE)
+                            .edit()
+                            .putString("jwt_token", token)
+                            .apply();
+
                     User user = response.body().getUser();
                     if (user != null) {
                         tvLoginError.setVisibility(View.GONE);
                         Toast.makeText(LoginActivity.this, "Bienvenido " + user.getFirstName(), Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        intent.putExtra("USERNAME", user.getFirstName());
+                        intent.putExtra("TOKEN", token);
                         startActivity(intent);
                         finish();
                     }

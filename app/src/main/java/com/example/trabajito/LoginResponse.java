@@ -7,10 +7,14 @@ public class LoginResponse {
     @SerializedName("user")
 
     private User user;
+    private String token;
 
     public User getUser() {
         return user;
     }
+
+    public String getToken() { return token; }
+
 
     public void setUser(User user) {
         this.user = user;

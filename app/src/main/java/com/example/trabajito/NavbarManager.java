@@ -3,8 +3,9 @@ package com.example.trabajito;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.view.View;
 import android.widget.Button;
+
+import com.example.trabajito.activities.RegisterActivity;
 
 public class NavbarManager {
 
