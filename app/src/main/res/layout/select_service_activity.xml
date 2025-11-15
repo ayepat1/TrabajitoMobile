@@ -35,6 +35,7 @@
 
         <Button
             android:id="@+id/serviceButton1"
+            android:tag="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
@@ -53,6 +54,7 @@
 
         <Button
             android:id="@+id/serviceButton2"
+            android:tag="2"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_brick_wall"
@@ -66,6 +68,7 @@
 
         <Button
             android:id="@+id/serviceButton3"
+            android:tag="3"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_wood_beam"
@@ -79,6 +82,7 @@
 
         <Button
             android:id="@+id/serviceButton4"
+            android:tag="4"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_lockpicks"
@@ -92,6 +96,7 @@
 
         <Button
             android:id="@+id/serviceButton5"
+            android:tag="5"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_nurse_female"
@@ -105,6 +110,7 @@
 
         <Button
             android:id="@+id/serviceButton6"
+            android:tag="6"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_bolt"
@@ -118,6 +124,7 @@
 
         <Button
             android:id="@+id/serviceButton7"
+            android:tag="7"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_blacksmith"
@@ -131,6 +138,7 @@
 
         <Button
             android:id="@+id/serviceButton8"
+            android:tag="8"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_gardening_shears"
@@ -144,6 +152,7 @@
 
         <Button
             android:id="@+id/serviceButton9"
+            android:tag="9"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_broom"
@@ -157,6 +166,7 @@
 
         <Button
             android:id="@+id/serviceButton10"
+            android:tag="10"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_boxes"
@@ -170,6 +180,7 @@
 
         <Button
             android:id="@+id/serviceButton11"
+            android:tag="11"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_truck"
@@ -183,6 +194,7 @@
 
         <Button
             android:id="@+id/serviceButton12"
+            android:tag="12"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_baby_bottle"
@@ -196,6 +208,7 @@
 
         <Button
             android:id="@+id/serviceButton13"
+            android:tag="13"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_paint_roller"
@@ -209,6 +222,7 @@
 
         <Button
             android:id="@+id/serviceButton14"
+            android:tag="14"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_faucet"
@@ -222,6 +236,7 @@
 
         <Button
             android:id="@+id/serviceButton15"
+            android:tag="15"
             android:layout_height="wrap_content"
             android:background="@drawable/button_services"
             android:drawableTop="@drawable/ic_gear_hammer"
