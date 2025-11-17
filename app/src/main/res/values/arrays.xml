@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- res/values/arrays.xml -->
 <resources>
     <string-array name="id_types_array">
         <item>DNI</item>
         <item>Cédula</item>
         <item>Pasaporte</item>
     </string-array>
-    <string-array name="opciones_urgencia" />
     <string-array name="opciones_tipo_servicio" />
 </resources>

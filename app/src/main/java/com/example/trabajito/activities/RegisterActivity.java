@@ -1,4 +1,4 @@
-package com.example.trabajito;
+package com.example.trabajito.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -21,6 +21,10 @@ import java.util.Locale;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.trabajito.ApiClient;
+import com.example.trabajito.ApiService;
+import com.example.trabajito.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

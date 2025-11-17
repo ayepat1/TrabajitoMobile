@@ -45,6 +45,8 @@ dependencies {
     implementation(libs.media3.common)
     implementation(libs.constraintlayout)
     implementation(libs.gridlayout)
+    implementation(libs.activity)
+    implementation(libs.security.crypto)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

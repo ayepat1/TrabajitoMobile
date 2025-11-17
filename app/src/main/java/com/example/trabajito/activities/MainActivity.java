@@ -1,15 +1,12 @@
-package com.example.trabajito;
+package com.example.trabajito.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.trabajito.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,15 +21,16 @@ public class MainActivity extends AppCompatActivity {
         nameTV = findViewById(R.id.nameTV);
 
         String username = null;
+        String token = null;
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            username = bundle.getString("USERNAME");
+            token = bundle.getString("TOKEN");
 
         }
 
         if (username != null && !username.isEmpty()) {
-            nameTV.setText("Hola, " + username + "!");
+            nameTV.setText("Hola, " + token + "!");
         } else {
             Log.e("MainActivity", "No se recibió el nombre de usuario.");
         }
