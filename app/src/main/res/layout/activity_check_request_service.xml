@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7F8FC"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resumen de tu solicitud"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:textColor="@color/azul_oscuro"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo de servicio"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/txtTipoServicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="(nombre servicio aquí)"
+                android:textStyle="bold"
+                android:background="@drawable/card_bluelight"
+                android:textAllCaps="true"
+                android:layout_marginBottom="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Datos del formulario"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:id="@+id/contenedorFormulario"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bluelight"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp" />
+
+            <!-- Ubicación -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:id="@+id/contenedorUbicacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bluelight"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_marginBottom="18dp"/>
+
+            <!-- Fotos -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fotos"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:id="@+id/contenedorFotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="4dp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Botón Confirmar -->
+            <Button
+                android:id="@+id/btnConfirmar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirmar solicitud"
+                android:background="@color/verde"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
