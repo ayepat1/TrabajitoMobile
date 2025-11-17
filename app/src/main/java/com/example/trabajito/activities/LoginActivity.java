@@ -1,3 +1,4 @@
+// java
 package com.example.trabajito.activities;
 
 import android.content.Intent;
@@ -18,6 +19,7 @@ import com.example.trabajito.ApiService;
 import com.example.trabajito.LoginResponse;
 import com.example.trabajito.NavbarManager;
 import com.example.trabajito.R;
+import com.example.trabajito.classes.TokenManager;
 import com.example.trabajito.classes.User;
 
 import retrofit2.Call;
@@ -28,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText emailInput, passwordInput;
     private Button loginButton;
-    private TextView textForgotPassword, textCreateAccount, tvLoginError;
+    private TextView textCreateAccount, tvLoginError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.email);
         passwordInput = findViewById(R.id.password);
         loginButton = findViewById(R.id.btnLogin);
-        //textForgotPassword = findViewById(R.id.text_forgotpassword);
         textCreateAccount = findViewById(R.id.text_createaccount);
-        //btnNavRegister = findViewById(R.id.btnNavRegister);
         tvLoginError = findViewById(R.id.tv_login_error);
 
         NavbarManager.setupNavbar(this);
@@ -48,10 +48,8 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String email = emailInput.getText().toString();
                 String password = passwordInput.getText().toString();
-
                 loginUser(email, password);
             }
         });
@@ -63,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     private void loginUser(String email, String password) {
@@ -82,10 +79,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     String token = response.body().getToken();
-                    getSharedPreferences("auth", MODE_PRIVATE)
-                            .edit()
-                            .putString("jwt_token", token)
-                            .apply();
+
+                    // Guardar token de forma segura
+                    TokenManager.saveToken(token);
 
                     User user = response.body().getUser();
                     if (user != null) {
@@ -93,7 +89,6 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Bienvenido " + user.getFirstName(), Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(LoginActivity.this, SelectServiceActivity.class);
-                        intent.putExtra("TOKEN", token);
                         startActivity(intent);
                         finish();
                     }
@@ -110,9 +105,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    private void handleApiError(Response<LoginResponse> response) {
-        String errorMessage = "Error desconocido. Inténtalo más tarde."; // Mensaje por defecto
 
+    private void handleApiError(Response<LoginResponse> response) {
+        String errorMessage = "Error desconocido. Inténtalo más tarde.";
         if (response.errorBody() != null) {
             try {
                 String errorBodyString = response.errorBody().string();
@@ -136,5 +131,4 @@ public class LoginActivity extends AppCompatActivity {
             Log.e("API_LOGIN_UNHANDLED", "Código: " + statusCode + ", Mensaje: " + errorMessage);
         }
     }
-
 }

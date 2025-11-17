@@ -17,6 +17,7 @@ gridlayout = "1.1.0"
 activity = "1.11.0"
 
 [libraries]
+security-crypto = "androidx.security:security-crypto:1.1.0"
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
