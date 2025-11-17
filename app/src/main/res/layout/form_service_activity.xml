@@ -58,139 +58,116 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tituloServicio"
+                <!-- Campos fijos -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Formulario para: [Servicio]"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
                     android:gravity="center"
-                    android:layout_marginBottom="24dp"
-                    android:textColor="@color/azul_oscuro"/>
+                    android:orientation="vertical">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/tituloServicio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Formulario para: [Servicio]"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginBottom="24dp"
+                        android:textColor="@color/azul_oscuro"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Título para su solicitud"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/inputTitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ej: Arreglo de cañerías en baño"
+                        android:inputType="text"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/edit_textbg"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¿Es una urgencia?"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="@color/black"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerUrgencia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/opciones_urgencia"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/edit_textbg"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¿Para qué fecha lo necesitas?"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/inputFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Selecciona una fecha"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/edit_textbg"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Describe el problema"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/inputDescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:hint="Contanos sobre el problema que necesitas resolver"
+                        android:gravity="top|start"
+                        android:inputType="textMultiLine"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/edit_textbg"/>
+
+                    <TextView
+                        android:id="@+id/textUrgente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="⚠ El servicio se deberá hacer con mayor prioridad y podría incluir gastos adicionales."
+                        android:textColor="#B58900"
+                        android:background="#FFF9C4"
+                        android:padding="8dp"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp" />
+
+                </LinearLayout>
+
+                <!-- Aquí se agregan los campos dinámicos -->
+                <LinearLayout
+                    android:id="@+id/fieldsContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Título para su solicitud"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="4dp"
-                    android:textColor="@color/black"/>
+                    android:orientation="vertical"
+                    android:gravity="center" />
 
-                <EditText
-                    android:id="@+id/inputTitulo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Ej: Arreglo de cañerías en baño"
-                    android:inputType="text"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/edit_textbg"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="¿Es una urgencia?"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="4dp"
-                    android:textColor="@color/black"/>
-
-                <Spinner
-                    android:id="@+id/spinnerUrgencia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:entries="@array/opciones_urgencia"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/edit_textbg"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="¿Para qué fecha lo necesitas?"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="4dp"
-                    android:textColor="@color/black"/>
-
-                <EditText
-                    android:id="@+id/inputFecha"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Selecciona una fecha"
-                    android:focusable="false"
-                    android:inputType="date"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/edit_textbg"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Describe el problema"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="4dp"
-                    android:textColor="@color/black"/>
-
-                <EditText
-                    android:id="@+id/inputDescripcion"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:hint="Contanos sobre el problema que necesitas resolver"
-                    android:gravity="top|start"
-                    android:inputType="textMultiLine"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/edit_textbg"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tipo de servicio requerido"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="4dp"
-                    android:textColor="@color/black"/>
-
-                <Spinner
-                    android:id="@+id/spinnerTipoServicio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:entries="@array/opciones_tipo_servicio"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/edit_textbg"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Observaciones adicionales"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="4dp"
-                    android:textColor="@color/black"/>
-
-                <EditText
-                    android:id="@+id/inputExtra"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:hint="Detalles opcionales sobre el trabajo"
-                    android:gravity="top|start"
-                    android:inputType="textMultiLine"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/edit_textbg"/>
-
-                <TextView
-                    android:id="@+id/textUrgente"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="⚠ El servicio se deberá hacer con mayor prioridad y podría incluir gastos adicionales."
-                    android:textColor="#B58900"
-                    android:background="#FFF9C4"
-                    android:padding="8dp"
-                    android:visibility="gone"
-                    android:layout_marginBottom="16dp" />
-
-            </LinearLayout>
-
+                <!-- Botón al final -->
                 <Button
                     android:id="@+id/submit_button_form_service"
                     android:layout_width="match_parent"
@@ -204,8 +181,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
