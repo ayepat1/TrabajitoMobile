@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:spacing="16dp">
+
+        <!-- INFO DEL SERVICIO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="12dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp">
+
+            <TextView
+                android:id="@+id/txtTituloServicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Título del servicio"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/txtDescripcionServicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descripción del servicio"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/txtFechaServicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha: 2024-06-10"
+                android:textColor="#666666"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- INFO DEL TRABAJADOR -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/imgFotoTrabajador"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_person"
+                android:background="#CCCCCC"
+                android:layout_gravity="center_horizontal"
+                android:clipToOutline="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Datos del trabajador"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/txtNombreTrabajador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre: Juan Pérez"/>
+
+            <TextView
+                android:id="@+id/txtEmailTrabajador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: juan@example.com"/>
+        </LinearLayout>
+
+        <!-- CALIFICACIÓN -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Servicio finalizado!"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calificá al trabajador:"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- ESTRELLAS -->
+        <LinearLayout
+            android:id="@+id/containerStars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:spacing="8dp">
+
+            <!-- Estas estrellas se reemplazan dinámicamente desde el Activity -->
+            <TextView
+                android:id="@+id/star1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☆"
+                android:textSize="32sp"/>
+
+            <TextView
+                android:id="@+id/star2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☆"
+                android:textSize="32sp"/>
+
+            <TextView
+                android:id="@+id/star3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☆"
+                android:textSize="32sp"/>
+
+            <TextView
+                android:id="@+id/star4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☆"
+                android:textSize="32sp"/>
+
+            <TextView
+                android:id="@+id/star5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☆"
+                android:textSize="32sp"/>
+        </LinearLayout>
+
+        <!-- BOTÓN -->
+        <Button
+            android:id="@+id/btnConfirmarCalificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmar calificación"
+            android:textColor="@color/black"
+            android:enabled="false"
+            android:layout_marginTop="16dp"
+            android:background= "@color/verde"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -34,7 +34,7 @@
                 android:textColor="@color/azul_oscuro"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tipo de servicio"
                 android:textSize="18sp"
@@ -53,7 +53,7 @@
                 android:layout_marginBottom="18dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Datos del formulario"
                 android:textSize="18sp"
@@ -71,7 +71,7 @@
 
             <!-- Ubicación -->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ubicación"
                 android:textSize="18sp"
@@ -89,20 +89,23 @@
 
             <!-- Fotos -->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fotos"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="6dp"/>
 
-            <LinearLayout
-                android:id="@+id/contenedorFotos"
+            <GridLayout
+                android:id="@+id/gridFotos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="4dp"
-                android:layout_marginBottom="20dp"/>
+                android:columnCount="2"
+                android:rowCount="2"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true"
+                android:layout_marginTop="10dp">
+            </GridLayout>
 
             <!-- Botón Confirmar -->
             <Button

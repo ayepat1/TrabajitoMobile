@@ -2,7 +2,7 @@ package com.example.trabajito.classes;
 
 import android.app.Application;
 
-import com.example.trabajito.TokenManager;
+import com.example.trabajito.classes.TokenManager;
 
 public class App extends Application {
     @Override

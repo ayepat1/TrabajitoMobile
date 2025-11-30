@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:spacing="16dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/txtTituloServicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Título del servicio"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:spacing="12dp">
+
+                <TextView
+                    android:id="@+id/txtCreado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Creado: fecha"/>
+
+                <TextView
+                    android:id="@+id/txtFechaSolicitada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha solicitada: fecha"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- CARD DETALLE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detalle del Servicio"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <!-- Tipo de servicio -->
+            <TextView
+                android:id="@+id/txtTipoServicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Tipo: Electricista"/>
+
+            <!-- Ubicación -->
+            <TextView
+                android:id="@+id/txtUbicacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación: Dirección completa"/>
+
+            <!-- Descripción -->
+            <TextView
+                android:id="@+id/txtDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción..."
+                android:layout_marginTop="12dp"/>
+
+            <!-- Urgencia -->
+            <TextView
+                android:id="@+id/txtUrgencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Urgente: Sí/No"
+                android:layout_marginTop="12dp"/>
+
+            <!-- Fotos -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fotos"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+            <LinearLayout
+                android:id="@+id/containerFotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:spacing="8dp"/>
+        </LinearLayout>
+
+        <!-- POSTULACIONES -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Postulaciones"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/containerPostulaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:spacing="12dp">
+        </LinearLayout>
+
+        <!-- BOTONES FINALES -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:spacing="12dp"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar servicio"/>
+
+            <Button
+                android:id="@+id/btnVerEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ver estado"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- TÍTULO + URGENTE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Título del trabajo"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#222" />
+
+            <TextView
+                android:id="@+id/txtUrgency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="URGENTE"
+                android:padding="6dp"
+                android:textColor="#FFFFFF"
+                android:background="#C62828"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- TIPO DE SERVICIO -->
+        <TextView
+            android:id="@+id/txtServiceType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipo de servicio:"
+            android:paddingTop="12dp"
+            android:textSize="14sp"
+            android:textColor="#555" />
+
+        <!-- PROPIEDAD -->
+        <TextView
+            android:id="@+id/txtPropertyType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipo de propiedad:"
+            android:textColor="#555" />
+
+        <!-- DIRECCIÓN -->
+        <TextView
+            android:id="@+id/txtAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección:"
+            android:textColor="#555" />
+
+        <!-- FECHA -->
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha:"
+            android:textColor="#555" />
+
+        <!-- DESCRIPCIÓN -->
+        <TextView
+            android:id="@+id/txtDescriptionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción:"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Texto de la descripción..."
+            android:textColor="#444"
+            android:paddingBottom="10dp" />
+
+        <!-- FOTOS -->
+        <TextView
+            android:id="@+id/txtFotos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fotos:"
+            android:textStyle="bold"
+            android:paddingTop="12dp"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/layoutPhotos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="8dp" />
+
+        <!-- PRESENTACIÓN -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Presentación del trabajador"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="20dp"
+            android:gravity="center" />
+
+        <EditText
+            android:id="@+id/inputPresentacion"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:hint="Escribí una breve presentación..."
+            android:gravity="top"
+            android:padding="10dp"
+            android:background="@android:drawable/editbox_background" />
+
+        <!-- PRESUPUESTO -->
+        <EditText
+            android:id="@+id/inputPresupuesto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese un monto en $"
+            android:inputType="number"
+            android:paddingTop="12dp"
+            android:padding="10dp"
+            android:background="@android:drawable/editbox_background" />
+
+        <!-- CHECKBOX -->
+        <CheckBox
+            android:id="@+id/checkVisita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Requiere visita previa?"
+            android:paddingTop="12dp"
+            android:textSize="14sp" />
+
+        <!-- BOTÓN -->
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar postulación"
+            android:background="#02283A"
+            android:textColor="#FFFFFF"
+            android:padding="14dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>

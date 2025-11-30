@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F4FBFD">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Hay un acuerdo de servicio!"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"/>
+
+        <!-- CONTENEDOR PRINCIPAL -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:divider="?android:dividerHorizontal"
+            android:showDividers="middle"
+            android:elevation="4dp">
+
+            <!-- ***************************** -->
+            <!-- COLUMNA IZQUIERDA - SOLICITUD -->
+            <!-- ***************************** -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:text="Solicitud"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="6dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtDescripcionSolicitud"
+                    android:text="Descripción del trabajo"
+                    android:textColor="#444"
+                    android:gravity="center"
+                    android:paddingBottom="6dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <!-- Info -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtFecha"
+                        android:text="Fecha: 24-11-2025"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtPresupuesto"
+                        android:text="Presupuesto: $60.000"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtUbicacion"
+                        android:text="Ubicación: -"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtSolicitante"
+                        android:text="Solicitante: -"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtEmailSolicitante"
+                        android:text="Email: juan@mail.com"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtTelefono"
+                        android:text="Teléfono: 1122334455"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtDiasFaltantes"
+                    android:layout_marginTop="16dp"
+                    android:text="Faltan X días para el servicio"
+                    android:textStyle="bold"
+                    android:textColor="#4B4FA3"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <!-- Fotos -->
+                <TextView
+                    android:text="Fotos:"
+                    android:paddingTop="12dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/contenedorFotos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!-- Aquí se cargarán imágenes dinámicamente -->
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- Botones solicitante -->
+                <Button
+                    android:id="@+id/btnConfirmarUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Confirmar trabajo finalizado"
+                    android:backgroundTint="#00b4d8"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:id="@+id/btnCancelarUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Cancelar servicio"
+                    android:backgroundTint="#ff4444"
+                    android:textColor="@android:color/white"/>
+
+            </LinearLayout>
+
+            <!-- COLUMNA DERECHA - TRABAJADOR -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/imgFotoTrabajador"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/ic_person"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/circle_mask"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/txtNombreTrabajador"
+                    android:text="Juan Pérez"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtRating"
+                    android:text="⭐ 4.8"
+                    android:textSize="16sp"
+                    android:textColor="#eab308"
+                    android:paddingBottom="6dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtDescripcionTrabajador"
+                    android:text="Descripción del trabajador"
+                    android:gravity="center"
+                    android:textColor="#444"
+                    android:paddingBottom="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtSubtituloTrabajador"
+                    android:text="Especialidad"
+                    android:textColor="#1d4ed8"
+                    android:textStyle="bold"
+                    android:paddingBottom="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtLocaciones"
+                    android:text="Locaciones: -"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtDias"
+                    android:text="Días: -"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtHorarios"
+                    android:text="Horarios: -"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <!-- Botones trabajador -->
+                <Button
+                    android:id="@+id/btnConfirmarTrabajador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Confirmar trabajo finalizado"
+                    android:backgroundTint="#0085ff"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:id="@+id/btnCancelarTrabajador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Cancelar servicio"
+                    android:backgroundTint="#ff4444"
+                    android:textColor="@android:color/white"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- MODAL FOTO AMPLIADA -->
+        <FrameLayout
+            android:id="@+id/modalFoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#AA000000"
+            android:visibility="gone"
+            android:gravity="center">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:padding="20dp"
+                android:elevation="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgFotoAmpliada"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"/>
+
+                <TextView
+                    android:id="@+id/txtNotaFoto"
+                    android:layout_marginTop="8dp"
+                    android:text="Nota de la foto"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btnCerrarModal"
+                    android:layout_marginTop="16dp"
+                    android:text="Cerrar"
+                    android:backgroundTint="#02283A"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</ScrollView>
